@@ -11,7 +11,8 @@ public class Main {
         double rendimento;
         //double taxaA;
         //double taxaB;
-        //double meta;
+        double meta;
+        double valorMes;
         //double difSaldo;
         double taxaMes;
 
@@ -81,7 +82,42 @@ public class Main {
                 break;
             
             case 2: 
-                System.out.println("Quanto você guarda por ano?");
+
+                do{
+                    System.out.println("Qual é a sua meta?");
+                    meta = sc.nextDouble();
+
+                    if (meta >= 1){
+                        System.out.println("O valor da meta deve ser maior que 0.");
+                    }
+                } while (meta >= 1);
+
+                do{ 
+                    System.out.println("Rendimento ao mês (%): ");
+                    taxaMes = sc.nextDouble() / 100.0;
+
+                    if (taxaMes < 0){
+                        System.out.println("A taxa dever ser igual ou maior que 0");
+                    }
+                } while (taxaMes < 0); 
+
+                do{
+                    System.out.println("Por quantos meses? ");
+                    meses = sc.nextInt();
+
+                    if (meses <= 0) {
+                        System.out.println("O mês não pode ser menor que 1");
+                    }
+
+                } while (meses <= 0);
+
+                if (taxaMes == 0){
+                    valorMes = meta / meses;
+                } else{
+                    valorMes = meta / ((Math.pow(1 + taxaMes, meses) - 1) / taxaMes);
+                }
+
+                System.out.printf("\nPara ter R$ %.2f em %d meses guarde R$ %.2f por mês\n", meta, meses, valorMes);
                 
                 break;
 
