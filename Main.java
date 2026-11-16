@@ -13,7 +13,6 @@ public class Main {
         double taxaB;
         double meta;
         double valorMes;
-        double difSaldo;
         double taxaMes;
         double saldoA;
         double saldoB;
