@@ -10,6 +10,7 @@ Programa de terminal em Java que calcula quanto você vai ter guardando dinheiro
 - **Quanto preciso guardar por mês?** Depósito mensal necessário para atingir uma meta.
 - **Comparar dois rendimentos:** saldo final de cada taxa e a diferença entre elas.
 - Validação das entradas: depósito, meta e meses precisam ser maiores que zero, e a taxa não pode ser negativa. Se o valor for inválido, o programa pede de novo, sem travar.
+- **Evolução mês a mês:** tabela com rendimento, depósito e saldo de cada mês.
 
 ## Como rodar
 
@@ -69,7 +70,6 @@ Usei a IA como professor, não como programador. Criei um projeto no Claude com 
 
 ## Próximos passos
 
-- Tabela com a evolução mês a mês
 - Separar cada opção em um método
 
 ---
