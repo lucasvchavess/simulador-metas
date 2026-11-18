@@ -16,6 +16,7 @@ public class Main {
         double taxaMes;
         double saldoA;
         double saldoB;
+        String opcao;
 
         Scanner sc = new Scanner(System.in);
 
@@ -76,6 +77,30 @@ public class Main {
 
                     System.out.printf("\nEm %d meses você terá R$ %.2f\n", meses, saldo);
                     System.out.printf("Você investiu R$ %.2f e o rendimento foi de R$ %.2f\n", totInvest, rendimento);
+
+                    do {
+                        System.out.print("\nQuer ver a evolução mês a mês? (S/N): ");
+                        opcao = sc.next().toUpperCase();
+
+                        if (opcao.equals("S")) {
+                            double saldoMes = 0;
+
+                            System.out.println();
+                            System.out.println("Mês | Rendimento |  Depósito |     Saldo");
+
+                            for (int mes = 1; mes <= meses; mes++) {
+                                double rendimentoMes = saldoMes * taxaMes;
+                                saldoMes = saldoMes + rendimentoMes + deposito;
+
+                                System.out.printf("%3d | %10.2f | %9.2f | %9.2f%n",
+                                        mes, rendimentoMes, deposito, saldoMes);
+                            }
+                            System.out.println();
+                        } else if (!opcao.equals("N")) {
+                            System.out.println("Opção inválida! Digite S ou N.");
+                        }
+                    } while (!opcao.equals("S") && !opcao.equals("N"));
+
                     break;
 
                 case 2:
